@@ -15,7 +15,6 @@ int main()
 	int N, M;
 	cin >> N >> M;
 
-	vector<int> a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 	vector<int> b;
 
 	for (int i = 0; i < M; i++) {
@@ -25,7 +24,7 @@ int main()
 	}
 
 	int min = abs(N - 100);
-	int size = log10((double)(N));
+	int size = N > 0 ? log10((double)(N)) : 0;
 	int result_size = 0;
 
 	for (int i = 0; i < 3; i++, size++) {
@@ -51,18 +50,11 @@ int main()
 					}
 				}
 				if (n != -1) {
-					cout << "j : " << j << endl;
 					if (min + result_size > abs(N - j) + size) {
 						min = abs(N - j);
 						result_size = size;
 					}
 				}
-		
-			}
-		}
-		else {
-			for (int j = 0; j < 10; j++) {
-				int n = j;
 
 			}
 		}
